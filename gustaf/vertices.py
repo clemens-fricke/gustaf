@@ -667,7 +667,7 @@ class Vertices(GustafBase):
         --------
         None          
         """
-        show.show(self, **kwargs)
+        return show.show(self, **kwargs)
 
     def copy(self):
         """

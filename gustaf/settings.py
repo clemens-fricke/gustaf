@@ -10,6 +10,8 @@ INT_DTYPE = "int32"
 
 VISUALIZATION_BACKEND = "vedo" # OPTIONS are <"vedo" | "trimesh" | "matplotlib">
 
+VEDO_BACKEND = None # OPTIONS are <None | "ipyvtk" >
+
 VEDO_DEFAULT_OPTIONS = dict(
     vertex=dict(
     ),

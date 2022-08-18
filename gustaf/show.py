@@ -90,7 +90,9 @@ def show_vedo(*args, **kwargs,):
     # get plotter
     if plt is None:
         plt = vedo.Plotter(
-            N=N, sharecam=False, offscreen=offs, size=size, title=title)
+            N=N, sharecam=False, offscreen=offs, size=size, title=title,
+            backend=settings.VEDO_BACKEND)
+        print(settings.VEDO_BACKEND)
 
     else:
         # check if plt has enough Ns
@@ -106,7 +108,8 @@ def show_vedo(*args, **kwargs,):
                 plt.close() # Hope that this truely releases..
             # assign a new one
             plt = vedo.Plotter(
-                N=N, sharecam=False, offscreen=offs, size=size, title=title)
+                N=N, sharecam=False, offscreen=offs, size=size, title=title,
+                backend=settings.VEDO_BACKEND)
 
     # loop and plot
     for i, arg in enumerate(args):
@@ -173,7 +176,7 @@ def show_vedo(*args, **kwargs,):
                 #offscreen=offs,
             )
 
-    if interac and not offs:
+    if interac and not offs and settings.VEDO_BACKEND is not None:
         # only way to ensure memory is released
         clear_vedoplotter(plt, prod(plt.shape))
 
@@ -181,7 +184,7 @@ def show_vedo(*args, **kwargs,):
             # It seems to leak some memory, but here it goes.
             plt.close() # if i close it, this cannot be reused...
             return None
-
+    print("plt returned asdasd")
     return plt
 
 def _vedo_showable(obj, **kwargs):
