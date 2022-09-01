@@ -14,7 +14,6 @@ try:
     from gustaf.spline.base import BSpline, NURBS, Bezier, RationalBezier
     from gustaf.spline.ffd import FFD
 except ImportError:
-    
     from gustaf.utils.init_helper import SplineCanNotBeLoadedHelper
     spline = SplineCanNotBeLoadedHelper()
     BSpline = spline
