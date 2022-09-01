@@ -14,6 +14,11 @@ from gustaf._base import GustafBase
 try:
     import vedo
 except ImportError:
+    # overwrites the vedo module with an object which will throw an error
+    # as soon as it is used the first time. This means that any non vedo
+    # functionality works as before, but as soon as vedo is used a
+    # comprehensive exception will be raised which is understandable in
+    # contrast to the possible errors previously possible
     from gustaf.utils.init_helper import VedoCanNotBeLoadedHelper
     vedo = VedoCanNotBeLoadedHelper()
 
