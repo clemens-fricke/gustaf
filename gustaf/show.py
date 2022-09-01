@@ -14,7 +14,8 @@ from gustaf._base import GustafBase
 try:
     import vedo
 except ImportError:
-    vedo = "cannot import vedo"
+    from gustaf.utils.init_helper import VedoCanNotBeLoadedHelper
+    vedo = VedoCanNotBeLoadedHelper()
 
 
 def show(*gusobj, **kwargs):
