@@ -14,7 +14,14 @@ try:
     from gustaf.spline.base import BSpline, NURBS, Bezier, RationalBezier
     from gustaf.spline.ffd import FFD
 except ImportError:
-    spline = "cannot import spline modules"
+    
+    from gustaf.utils.init_helper import SplineCanNotBeLoadedHelper
+    spline = SplineCanNotBeLoadedHelper()
+    BSpline = spline
+    NURBS = spline
+    Bezier = spline
+    RationalBezier = spline
+    FFD = spline
 
 # import try/catch for triangle and gustaf-tetgen
 
