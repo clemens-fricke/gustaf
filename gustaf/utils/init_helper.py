@@ -3,22 +3,19 @@ from typing import Any
 
 class LibraryCanNotBeLoadedHelper():
     """
-    Class used to have better import error handling in the case the 'splinepy'
-    package is not installed. This is necessary due to that `splinepy` is not
-    a dependency of `gustaf`, but some parts require it to function.
-
-    This class makes it so that `gustaf` is able to provide all non-spline
-    based functionality with out `splinepy`, but gives also comprehensive
-    errors in case these functionalities are used without the required package.
+    Class used to have better import error handling in the case that a package
+    package is not installed. This is necessary due to that some packages are
+    not a dependency of `gustaf`, but some parts require them to function.
+    Examples are `splinepy` and `vedo`.
     """
     _message = None
 
     def __init__(self, lib_name: str) -> None:
-        self._message = \
-           "Parts of the spline functionality in gustaf cannot be "+\
-           f"provided because the `{lib_name}` package was not found. "+\
-           "Please refer to the installation instructions for more"+\
-           " information."
+        self._message = str(
+           "Parts of the requested functionality in gustaf depend on the "
+           f"external `{lib_name}` package which could not be found on your"
+           " system. Please refer to the installation instructions for more"
+           " information.")
 
     def __call__(self, *args: Any, **kwds: Any) -> Any:
         """
