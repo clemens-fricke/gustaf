@@ -19,8 +19,8 @@ except ImportError:
     # functionality works as before, but as soon as vedo is used a
     # comprehensive exception will be raised which is understandable in
     # contrast to the possible errors previously possible
-    from gustaf.utils.init_helper import VedoCanNotBeLoadedHelper
-    vedo = VedoCanNotBeLoadedHelper()
+    from gustaf.utils.init_helper import LibraryCanNotBeLoadedHelper
+    vedo = LibraryCanNotBeLoadedHelper("vedo")
 
 
 def show(*gusobj, **kwargs):
