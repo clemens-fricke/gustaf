@@ -5,7 +5,7 @@ class SplineCanNotBeLoadedHelper():
     """
     Class used to have better import error handling in the case the 'splinepy'
     package is not installed. This is necessary due to that `splinepy` is not
-    a requirement of `gustaf`, but some parts of `gustaf` need it to function.
+    a dependency of `gustaf`, but some parts require it to function.
 
     This class makes it so that `gustaf` is able to provide all non-spline
     based functionality with out `splinepy`, but gives also comprehensive
