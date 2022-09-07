@@ -15,9 +15,10 @@ class LibraryCanNotBeLoadedHelper():
 
     def __init__(self, lib_name: str) -> None:
         self._message = \
-            "This gustaf functionality can not be provided due to not being "+\
-            f"able to load the `{lib_name}` package. Please see the install "+\
-            "instructions on how to install it."
+           "Parts of the spline functionality in gustaf cannot be "+\
+           f"provided because the `{lib_name}` package was not found. "+\
+           "Please refer to the installation instructions for more"+\
+           " information."
 
     def __call__(self, *args: Any, **kwds: Any) -> Any:
         """
